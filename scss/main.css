@@ -1,33 +1,49 @@
-@charset "UTF-8";
-body .header {
-  width: 1920px;
-  height: 261px;
-  padding: 50px 240px 50px 240px;
-  background-color: rgb(51, 54, 53);
+* {
+  box-sizing: border-box;
 }
-body .header__top {
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 1608px;
+  height: 1000px;
+  background-image: url("/src/background1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #f5f7fa;
+  font-family: "Raleway", sans-serif;
+}
+
+.header {
+  margin: 0;
+  width: 1608px;
+  height: 261px;
+  padding: 50px;
+  box-sizing: border-box;
+}
+.header__top {
   width: 1440px;
   height: 60px;
   display: flex;
   justify-content: space-between;
 }
-body .header__logo__adress {
+.header__logo__adress {
   width: 630px;
   height: 60px;
-  display: flex; /* Устанавливаем флекс-контейнер */
-  align-items: center; /* Выравниваем элементы по вертикали (по центру) */
-  gap: 10px; /* Добавляем расстояние между логотипом и адресом */
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
-body .header__logo {
+.header__logo {
   width: 289px;
   height: 60px;
 }
-body .header .logo {
+.header .logo {
   display: flex;
   gap: 20px;
   align-items: center;
 }
-body .header .logo__icon {
+.header .logo__icon {
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -35,38 +51,70 @@ body .header .logo__icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #f5f7fa;
-  font-family: "Raleway", sans-serif;
   font-size: 24px;
   font-weight: 900;
 }
-body .header .logo__text {
-  font-family: "Raleway", sans-serif;
-  color: #f5f7fa;
-}
-body .header .logo__text--primary {
+.header .logo__text--primary {
   font-size: 24px;
   font-weight: 900;
   line-height: 35.22px;
   width: 209px;
   height: 32px;
 }
-body .header .logo__text--secondary {
+.header .logo__text--secondary {
   font-size: 17px;
   font-weight: 400;
   line-height: 19.96px;
   width: 206px;
   height: 20px;
 }
-body .header__adress {
+.header__adress {
   width: 301px;
-  height: 60px;
+  height: 44px;
+  display: flex;
+  align-items: center;
 }
-body .header .adress {
+.header .adress {
   font-family: "Mplus 1p", sans-serif;
   font-size: 15px;
   font-weight: 400;
   line-height: 22.28px;
   text-align: left;
-  color: #FFFFFF;
+}
+.header__separator {
+  width: 1px;
+  height: 60px;
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+}
+.header__contacts {
+  display: flex;
+  width: auto;
+  height: auto;
+  gap: 20px;
+  align-items: center;
+}
+.header .contacts {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  font-family: "Mplus 1p", sans-serif;
+}
+.header .contacts__phone {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 29.7px;
+  text-align: left;
+  width: 197px;
+  height: 30px;
+}
+.header .contacts__callback {
+  width: 151px;
+  height: 38px;
+  background: #0B1B23;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 17.82px;
+  text-align: center;
+  color: #f5f7fa;
+  border-radius: 5px;
 }/*# sourceMappingURL=main.css.map */

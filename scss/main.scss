@@ -1,9 +1,26 @@
+*{
+  box-sizing: border-box;
+}
+
 body {
+  
+  margin: 0;
+  padding: 0;
+  width: 1608px; 
+  height: 1000px; 
+  background-image: url('/src/background1.png'); 
+  background-size: cover; 
+  background-repeat : no-repeat;
+  color: #f5f7fa; 
+  font-family: "Raleway", sans-serif; 
+}
+
   .header {
-    width: 1920px;
+    margin: 0; 
+    width: 1608px;
     height: 261px;
-    padding: 50px 240px 50px 240px;
-    background-color: rgb(51, 54, 53);
+    padding: 50px;
+    box-sizing: border-box;
 
     &__top {
       width: 1440px;
@@ -15,70 +32,110 @@ body {
     &__logo__adress {
       width: 630px;
       height: 60px;
-      display: flex; /* Устанавливаем флекс-контейнер */
-      align-items: center; /* Выравниваем элементы по вертикали (по центру) */
-      gap: 10px; /* Добавляем расстояние между логотипом и адресом */
-    }
-
-    &__logo {
-      width: 289px;
-      height: 60px;
-    }
-
-    .logo {
       display: flex;
-      gap: 20px;
       align-items: center;
-
-      &__icon {
-        width: 60px;
+      gap: 10px;
+    }
+      &__logo {
+        width: 289px;
         height: 60px;
-        border-radius: 50%; // Делает элемент кругом
-        background: #2cb4fe;
-        display: flex; // Устанавливаем flex для центрирования текста
-        align-items: center; // Центрирование текста по вертикали
-        justify-content: center; // Центрирование текста по горизонтали
-        color: #f5f7fa; // Цвет текста
-        font-family: "Raleway", sans-serif; // Шрифт текста
-        font-size: 24px; // Размер текста
-        font-weight: 900; // Жирность текста
       }
-      &__text {
-        font-family: "Raleway", sans-serif;
-        color: #f5f7fa;
 
-        &--primary {
-          font-size: 24px;
-          font-weight: 900;
-          line-height: 35.22px;
-          width: 209px;
-          height: 32px;
+      .logo {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+
+        &__icon {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%; 
+          background: #2cb4fe;
+          display: flex; 
+          align-items: center; 
+          justify-content: center; 
+          
+          font-size: 24px; 
+          font-weight: 900; 
         }
+        &__text {
+         
+          &--primary {
+            font-size: 24px;
+            font-weight: 900;
+            line-height: 35.22px;
+            width: 209px;
+            height: 32px;
+          }
 
-        &--secondary {
-          font-size: 17px;
+          &--secondary {
+            font-size: 17px;
+            font-weight: 400;
+            line-height: 19.96px;
+            width: 206px;
+            height: 20px;
+          }
+        }
+      }
+
+      &__adress {
+        width: 301px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+      }
+
+      .adress {
+        font-family: "Mplus 1p", sans-serif;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 22.28px;
+        text-align: left;
+      }
+
+      &__separator {
+        width: 1px; 
+        height: 60px; 
+        border-left: 1px solid rgba(255, 255, 255, 0.5);  
+      }
+
+      &__contacts{
+        display: flex; 
+        width: auto;
+        height: auto;
+        gap: 20px;
+        align-items: center;
+      }
+      
+      .contacts {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        font-family: 'Mplus 1p', sans-serif;
+        
+        &__phone{
+          
+          font-size: 20px;
           font-weight: 400;
-          line-height: 19.96px;
-          width: 206px;
-          height: 20px;
+          line-height: 29.7px;
+          text-align: left;
+          width: 197px;
+          height: 30px;
+        }
+
+        &__callback{
+          width: 151px;
+          height: 38px;
+          background: #0B1B23;
+          font-size: 12px;
+          font-weight: 800;
+          line-height: 17.82px;
+          text-align: center;
+          color: #f5f7fa;
+          border-radius: 5px;
         }
       }
-    }
 
-    &__adress {
-      width: 301px;
-      height: 60px;
-      
-    }
 
-    .adress{
-      font-family: 'Mplus 1p', sans-serif;
-      font-size: 15px;
-      font-weight: 400;
-      line-height: 22.28px;
-      text-align: left;
-      color: #FFFFFF;
-      
     }
-  }
-}
+ 
