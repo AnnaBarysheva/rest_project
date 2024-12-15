@@ -1,0 +1,413 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("/assets/fonts/Raleway-Thin.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url("/assets/fonts/Raleway-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url("/assets/fonts/Raleway-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url("/assets/fonts/Raleway-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url("/assets/fonts/Raleway-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mplus";
+  src: url("/assets/fonts/MPLUS1-Thin.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mplus";
+  src: url("/assets/fonts/MPLUS1-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mplus";
+  src: url("/assets/fonts/MPLUS1-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mplus";
+  src: url("/assets/fonts/MPLUS1-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mplus";
+  src: url("/assets/fonts/MPLUS1-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+a {
+  text-decoration: none;
+}
+ul , ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --brand-color: #2CB4FE;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-image: url("./assets/images/background1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #f5f7fa;
+  // background: #0b1b23;
+  font-family: Raleway;
+  font-weight: 400;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.content {
+  max-width: calc(1440px + 16px * 2);
+  padding: 0 16px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.header {
+  padding: 50px 0;
+  @media (max-width: 1024px) {
+    padding: 20px 0;
+  }
+  .content{
+    display: flex;
+    flex-direction: column;
+    gap: 37px;
+    .header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      .logo_adress{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        .logo{
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          .icon {
+            color: #F5F7FA;
+            font-family: Raleway;
+            font-size: 28px;
+            font-style: normal;
+            font-weight: 900;
+            line-height: 32.87px;
+            text-align: left;            
+            display: flex;
+            width: 60px;
+            height: 60px;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            flex-shrink: 0;
+            border-radius: 100px;
+            background: var(--brand-color);
+            @media (max-width: 1024px) {
+              width: 48px;
+              height: 48px;
+              font-size: 23px;
+            }
+          }
+          h1{
+            max-width: 209px;
+            color: #FFF;
+            font-family: Raleway;
+            font-size: 30px;
+            font-style: normal;
+            font-weight: 900;
+            line-height: normal;
+            display: flex;
+            flex-direction: column;
+            @media (max-width:1024px){
+              font-size: 24px; 
+            }
+            span{
+              color: #FFF;
+              font-family: Raleway;
+              font-size: 17px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: normal;
+              @media (max-width:1024px){
+                font-size: 14px; 
+              }
+            }
+          }
+        }
+        .separator{
+          opacity: 0.5;
+          background-color: #FFF; 
+          flex-shrink: 0;
+          width: 1px;
+          height: 60px;
+          @media (max-width:1024px){
+            display: none; 
+          }
+        }
+        .adress {
+          color: #FFF;
+          font-family: "Mplus";
+          font-size: 15px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          max-width: 301px;
+          @media (max-width:1024px){
+            display: none; 
+          }
+        }
+      }
+      .phone-select{
+        max-width: 197px;
+        font-family: Mplus;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 30px;
+        color: #ffffff;
+        .phone-select-wrapper{
+          display: none;         
+        }
+        @media (max-width:1024px){
+          display: none; 
+        }
+      }
+      .callback{
+        all: unset;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #0B1B23;
+        width: 151px;
+        border-radius: 5px;
+        padding: 10px ;
+        font-family: "Mplus";
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 700;
+        height: 40px;
+        color: #ffffff;
+        @media (max-width:1024px){
+          display: none; 
+        }
+      }
+      .contacts-socials{
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        .social-link{
+          align-items: center;
+          justify-content: center;
+          width: 40px;
+          height: 40px;
+          display: flex;
+          border-radius: 5px;
+          margin: 0 auto;
+          background: #0b1b23;
+          @media (max-width:1024px){
+            display: none; 
+          }
+        }
+      }
+    }
+    .burger-btn{
+      width: 40px;
+      height: 40px;
+      align-items: flex-end;
+      flex-direction: column;
+      justify-content: center;
+      gap: 10px;
+      cursor: pointer;
+      display: none;
+      @media (max-width:1024px) {
+        display: flex;
+      }
+      .line{
+        &:first-child{
+          width: 100%;
+          height: 2px;
+          border-radius: 2px;
+          flex-shrink: 0;
+          background: #F5F7FA;
+        }
+        &:last-child{
+          width: 28px;
+          height: 2px;
+          border-radius: 2px;
+          flex-shrink: 0;
+          background: #F5F7FA;
+        }
+      }
+    }
+  }
+
+
+
+
+
+  &__top {
+    width: 1440px;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__logo__adress {
+    width: 630px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  &__logo {
+    width: 289px;
+    height: 60px;
+  }
+
+  .logo {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+    &__icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #2cb4fe;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 24px;
+      font-weight: 900;
+    }
+    &__text {
+      &--primary {
+        font-size: 24px;
+        font-weight: 900;
+        line-height: 35.22px;
+        width: 209px;
+        height: 32px;
+      }
+
+      &--secondary {
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 19.96px;
+        width: 206px;
+        height: 20px;
+      }
+    }
+  }
+
+  &__adress {
+    width: 301px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  .adress {
+    font-family: "Mplus 1p", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 22.28px;
+    text-align: left;
+  }
+
+  &__separator {
+    width: 1px;
+    height: 60px;
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+  }
+
+  &__contacts {
+    display: flex;
+    width: auto;
+    height: auto;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .contacts {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-family: "Mplus 1p", sans-serif;
+
+    &__phone {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 29.7px;
+      text-align: left;
+      width: 197px;
+      height: 30px;
+    }
+
+    &__callback {
+      width: 151px;
+      height: 38px;
+      background: #0b1b23;
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 17.82px;
+      text-align: center;
+      color: #f5f7fa;
+      border-radius: 5px;
+    }
+  }
+}
