@@ -220,6 +220,7 @@ body {
   }
 }
 .header .content .header-row .phone-select {
+  position: relative;
   max-width: 197px;
   font-family: Mplus;
   font-size: 16px;
@@ -227,8 +228,37 @@ body {
   line-height: 30px;
   color: #ffffff;
 }
+.header .content .header-row .phone-select:hover .phone-select-header:after {
+  transform: rotate(180deg);
+}
+.header .content .header-row .phone-select:hover .phone-select-wrapper {
+  display: flex;
+}
+.header .content .header-row .phone-select .phone-select-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.header .content .header-row .phone-select .phone-select-header:after {
+  content: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z' fill='%23FFFFFF'/%3E%3C/svg%3E%0A");
+  display: flex;
+  width: 24px;
+  height: 24px;
+  transition: 0.5s ease;
+}
 .header .content .header-row .phone-select .phone-select-wrapper {
   display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  width: calc(100% + 100px);
+}
+.header .content .header-row .phone-select .phone-select-wrapper a {
+  color: #fafafb;
+  padding: 0;
+  left: 10px;
 }
 @media (max-width: 1024px) {
   .header .content .header-row .phone-select {
@@ -239,6 +269,7 @@ body {
   all: unset;
   box-sizing: border-box;
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
   background: #0b1b23;
@@ -311,34 +342,47 @@ body {
   border-radius: 5px;
   background: #0b1b23;
   padding: 0 20px;
+  align-items: center;
 }
-.header .content .nav ul {
+@media (max-width: 1024px) {
+  .header .content .nav {
+    display: none;
+  }
+}
+.header .content .nav .nav-list {
   display: flex;
   align-items: center;
   justify-content: space-around;
   width: 100%;
 }
-.header .content .nav ul li.dropdown {
+.header .content .nav .nav-list li.dropdown {
   position: relative;
 }
-.header .content .nav ul li.dropdown:hover .dropdown-link:after {
+.header .content .nav .nav-list li.dropdown:hover .dropdown-link:after {
   transform: rotate(180deg);
 }
-.header .content .nav ul li.dropdown:hover .submenu {
+.header .content .nav .nav-list li.dropdown:hover .submenu {
   display: flex;
 }
-.header .content .nav ul li.dropdown .dropdown-link {
+.header .content .nav .nav-list li.dropdown .dropdown-link {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-.header .content .nav ul li.dropdown .dropdown-link:after {
+.header .content .nav .nav-list li.dropdown .dropdown-link:after {
   content: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z' fill='%237095AA'/%3E%3C/svg%3E%0A");
   display: flex;
-  align-items: center;
+  width: 24px;
+  height: 24px;
   transition: 0.5s ease;
 }
-.header .content .nav ul li.dropdown .submenu {
+.header .content .nav .nav-list li.dropdown .dropdown-link:before {
+  content: none;
+}
+.header .content .nav .nav-list li.dropdown .dropdown-link:hover {
+  color: #f5f7fa;
+}
+.header .content .nav .nav-list li.dropdown .submenu {
   padding: 20px;
   position: absolute;
   left: 0;
@@ -346,16 +390,23 @@ body {
   background: #0f242f;
   flex-direction: column;
   align-items: flex-start;
-  gap: 10px;
+  gap: 20px;
   width: calc(100% + 100px);
   display: none;
+  z-index: 2;
 }
-.header .content .nav ul li.dropdown .submenu a {
+.header .content .nav .nav-list li.dropdown .submenu a {
   color: #fafafb;
   padding: 0;
   left: 10px;
 }
-.header .content .nav ul li a {
+.header .content .nav .nav-list li.dropdown .submenu a:before {
+  content: none;
+}
+.header .content .nav .nav-list li.dropdown .submenu a:hover {
+  color: var(--brand-color);
+}
+.header .content .nav .nav-list li a {
   display: flex;
   padding: 20px;
   justify-content: center;
@@ -371,6 +422,50 @@ body {
   position: relative;
   overflow: hidden;
   transition: 0.5s ease;
+}
+.header .content .nav .nav-list li a:hover {
+  color: var(--brand-color);
+}
+.header .content .nav .nav-list li a:hover::before {
+  bottom: -16px;
+}
+.header .content .nav .nav-list li a::before {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='119' height='19' viewBox='0 0 119 19' fill='none'%3E%3Cellipse cx='59.5' cy='9.5' rx='59.5' ry='9.5' fill='%232CB4FE'/%3E%3C/svg%3E");
+  width: 119px;
+  height: 19px;
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  transition: 0.3s ease;
+}
+.header .content .nav .burger-btn {
+  width: 40px;
+  height: 40px;
+  align-items: flex-end;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  display: flex;
+}
+.header .content .nav .burger-btn .line:first-child {
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  flex-shrink: 0;
+  background: #f5f7fa;
+}
+.header .content .nav .burger-btn .line:last-child {
+  width: 28px;
+  height: 2px;
+  border-radius: 2px;
+  flex-shrink: 0;
+  background: #f5f7fa;
+}
+.header .content .nav .burger-btn:hover .line {
+  background: var(--brand-color);
 }
 .header__top {
   width: 1440px;
@@ -468,4 +563,140 @@ body {
   text-align: center;
   color: #f5f7fa;
   border-radius: 5px;
+}
+
+.main {
+  padding: 0 50px;
+}
+@media (max-width: 1024px) {
+  .main {
+    padding: 20px 0;
+  }
+}
+.main .slider {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+}
+.main .slider .frame {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+.main .slider .frame .text {
+  display: flex;
+  flex-direction: column;
+  max-width: 971px;
+  max-height: 795px;
+  gap: 50px;
+}
+.main .slider .frame .text p:first-child {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 80px;
+  line-height: 94px;
+  color: #ffffff;
+  flex-grow: 0;
+}
+.main .slider .frame .text p:last-child {
+  font-family: "Raleway";
+  font-style: normal;
+  text-align: left;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 47px;
+  color: #ffffff;
+  flex-grow: 0;
+}
+.main .slider .frame .ripple {
+  max-width: 232px;
+  display: flex;
+  padding: 20px 30px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background: var(--brand-color);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.main .slider .frame .ripple:hover span {
+  color: var(--brand-color);
+}
+.main .slider .frame .ripple:hover::before {
+  animation: scaleCircle 1s ease forwards;
+}
+.main .slider .frame .ripple:not(:hover) span {
+  transition: 0.3s ease 0.5s;
+}
+.main .slider .frame .ripple:not(:hover)::before {
+  animation: scaleDownCircle 1s ease forwards;
+}
+.main .slider .frame .ripple span {
+  color: #fff;
+  font-family: "Mplus";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+}
+.main .slider .frame .ripple::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 500px;
+  background: #ffffff;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -60px;
+  transition: 1s ease forwards;
+  z-index: 1;
+}
+.main .slider .scroll-bar {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  gap: 20px;
+  position: relative;
+  bottom: 0;
+  right: 0;
+  max-height: 64px;
+}
+.main .slider .scroll-bar p {
+  width: 39px;
+  height: 29px;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 29px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+@keyframes scaleCircle {
+  from {
+    width: 5px;
+    height: 5px;
+  }
+  to {
+    width: 300px;
+    height: 300px;
+  }
+}
+@keyframes scaleDownCircle {
+  from {
+    width: 300px;
+    height: 300px;
+  }
+  to {
+    width: 5px;
+    height: 5px;
+  }
 }/*# sourceMappingURL=main.css.map */
