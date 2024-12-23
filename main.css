@@ -284,17 +284,47 @@ body {
   width: 151px;
   border-radius: 5px;
   padding: 10px;
-  font-family: "Mplus";
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 700;
-  height: 40px;
-  color: #ffffff;
+  position: relative;
+  overflow: hidden;
 }
 @media (max-width: 1024px) {
   .header .content .header-row .callback {
     display: none;
   }
+}
+.header .content .header-row .callback:hover span {
+  color: var(--brand-color);
+}
+.header .content .header-row .callback:hover::before {
+  animation: scaleCircle 1s ease forwards;
+}
+.header .content .header-row .callback:not(:hover) span {
+  transition: 0.3s ease 0.5s;
+}
+.header .content .header-row .callback:not(:hover)::before {
+  animation: scaleDownCircle 1s ease forwards;
+}
+.header .content .header-row .callback::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 500px;
+  background: #ffffff;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -60px;
+  transition: 1s ease forwards;
+  z-index: 1;
+}
+.header .content .header-row .callback span {
+  font-family: "Mplus";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 18px;
+  color: #ffffff;
+  z-index: 2;
 }
 .header .content .header-row .contacts-socials {
   display: flex;
@@ -310,11 +340,36 @@ body {
   border-radius: 5px;
   margin: 0 auto;
   background: #0b1b23;
+  transition: 0.3s ease;
 }
 @media (max-width: 1024px) {
   .header .content .header-row .contacts-socials .social-link {
     display: none;
   }
+}
+.header .content .header-row .contacts-socials .social-link.whatsapp:hover {
+  background: #25D366;
+}
+.header .content .header-row .contacts-socials .social-link.whatsapp:hover svg path {
+  fill: #fff;
+}
+.header .content .header-row .contacts-socials .social-link.telegram:hover {
+  background: var(--brand-color);
+}
+.header .content .header-row .contacts-socials .social-link.telegram:hover svg path {
+  fill: #fff;
+}
+.header .content .header-row .contacts-socials .social-link.vk:hover {
+  background: #548CF6;
+}
+.header .content .header-row .contacts-socials .social-link.vk:hover svg path {
+  fill: #fff;
+}
+.header .content .header-row .contacts-socials .social-link.ok:hover {
+  background: #F79418;
+}
+.header .content .header-row .contacts-socials .social-link.ok:hover svg path {
+  fill: #fff;
 }
 .header .content .burger-btn {
   width: 40px;

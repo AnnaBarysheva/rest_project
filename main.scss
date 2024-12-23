@@ -283,15 +283,49 @@ body {
         background: #0b1b23;
         width: 151px;
         border-radius: 5px;
-        padding: 10px;
-        font-family: "Mplus";
-        font-size: 12px;
-        font-style: normal;
-        font-weight: 700;
-        height: 40px;
-        color: #ffffff;
+        padding: 10px;   
+        position: relative;    
+        overflow: hidden; 
         @media (max-width: 1024px) {
           display: none;
+        }
+        &:hover {
+          span {
+            color: var(--brand-color);
+          }
+          &::before {
+            animation: scaleCircle 1s ease forwards;
+          }
+        }
+        &:not(:hover) {
+          span {
+            transition: 0.3s ease 0.5s;
+          }
+          &::before {
+            animation: scaleDownCircle 1s ease forwards;
+          }
+        }
+        &::before {
+          content: "";
+          width: 5px;
+          height: 5px;
+          border-radius: 500px;
+          background: #ffffff;
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          bottom: -60px;
+          transition: 1s ease forwards;
+          z-index: 1;
+        }
+        span{
+          font-family: "Mplus";
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 800;
+          line-height: 18px;
+          color: #ffffff;
+          z-index: 2;
         }
       }
       .contacts-socials {
@@ -307,10 +341,43 @@ body {
           border-radius: 5px;
           margin: 0 auto;
           background: #0b1b23;
+          transition: 0.3s ease; 
           @media (max-width: 1024px) {
             display: none;
+          }        
+        &.whatsapp {
+          &:hover {
+            background: #25D366;             
+            svg path {
+              fill: #fff; 
+            }
           }
         }
+        &.telegram {
+          &:hover {
+            background: var(--brand-color);             
+            svg path {
+              fill: #fff; 
+            }
+          }
+        }
+        &.vk {
+          &:hover {
+            background: #548CF6;             
+            svg path {
+              fill: #fff; 
+            }
+          }
+        }
+        &.ok {
+          &:hover {
+            background: #F79418;             
+            svg path {
+              fill: #fff; 
+            }
+          }
+        }
+      }
       }
     }
     .burger-btn {
